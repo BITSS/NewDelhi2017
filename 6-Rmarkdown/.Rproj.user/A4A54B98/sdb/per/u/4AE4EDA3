@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"Testing for Fraud with Raw Data\"\nauthor: \"Garret Christensen\"\ndate: \"December 1, 2016\"\noutput: pdf_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n\n## \n\n",
+    "created" : 1480639660030.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "3101317266",
+    "id" : "4AE4EDA3",
+    "lastKnownWriteTime" : 2481051765037560417,
+    "last_content_update" : 1480639700831,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
