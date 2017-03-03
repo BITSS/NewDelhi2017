@@ -1,0 +1,264 @@
+\title{Pre-Analysis Plan: \\ \text{Title of the study}\thanks{Acknowledgements and disclaimers.}}
+\author{Author's name\thanks{Author's affiliation and e-mail.}} 
+
+\date{Date of latest draft}
+
+\documentclass[12pt]{article}
+\usepackage{geometry,etoolbox,breakcites,natbib,cite,color,hyperref,enumerate,amsmath,dsfont,lscape,tocloft,booktabs,draftwatermark}
+\usepackage[singlespacing]{setspace}
+\usepackage[bottom]{footmisc}
+\makeatletter
+\patchcmd{\@citex}{,}{;}{}{}
+\makeatother
+\SetWatermarkText{}\SetWatermarkLightness{0.85} \SetWatermarkScale{4}
+
+\begin{document}
+\sloppy
+\maketitle
+
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\tableofcontents
+
+\clearpage
+
+\section{Introduction}
+
+\subsection{Abstract}
+
+\begin{itemize}
+\item In 1-2 sentences, what does the study entail?
+\item In 1-2 sentences, why is this study important/relevant?
+\end{itemize}
+
+\subsection{Motivation}
+
+\begin{itemize}
+\item What is the main problem/question motivating the study?
+\item How has this problem/question been addressed thus far?
+\item How is this study different from prior research on this problem/question? 
+\item Why is the context that you have chosen for this study appropriate?
+\end{itemize}
+
+\subsection{Research Questions}
+
+\begin{itemize}
+\item What are the main research questions the study seeks to answer?
+\end{itemize}
+
+\section{Research Strategy}
+
+\subsection{Sampling}
+
+\subsubsection{Sampling Frame}
+
+\begin{itemize}
+\item What is the eligible population for the study?
+\begin{itemize}
+\item What are the main characteristics of this population?
+\end{itemize}
+\item What is the expected sample for the study?
+\begin{itemize}
+\item What is the expected sample size?
+\item How does the expected sample differ from the population?
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Statistical Power}
+
+\begin{itemize}
+\item What is the effect size you will be able to detect?
+\begin{itemize} 
+\item What are your assumptions about your alpha-level?
+\item What are your assumptions about your statistical power?
+\item What are your assumptions about variability in your effect size?
+\item How many sites will you have?
+\item How many people will you have in each site?
+\item What share of the variance do you expect to predict with your covariates?
+\end{itemize}
+\item How sensitive is your effect size to changes in your parameters?
+\end{itemize}
+
+\subsubsection{Assignment to Treatment}
+
+\begin{itemize}
+\item How will individuals be assigned to treatment and control conditions?
+\item What is the source of exogenous variation in your study?
+\end{itemize}
+
+\subsubsection{Attrition from the Sample}
+
+\begin{itemize}
+\item Do you anticipate any form of attrition from the sample?
+\begin{itemize}
+\item If so, what share of the sample do you anticipate will attrit? 
+\item On what evidence are you basing your expectations about attrition?
+\item How realistic are your expectations about attrition?
+\end{itemize}
+\item What can you do anything to prevent/remedy sample attrition?
+\item How does expected attrition change your power calculations?
+\end{itemize}
+
+\subsection{Fieldwork}
+
+\subsubsection{Instruments}
+
+\begin{itemize}
+\item What data collections instruments will you employ?
+\begin{itemize}
+\item What (groups of) indicators will each instrument cover?
+\item How was each instrument developed?
+\item Have each instrument been used before? 
+\item If so, by whom? If not, are you piloting it?
+\item What are the main advantages/disadvantages of each instrument? 
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Data Collection}
+
+\begin{itemize}
+\item How long will the entire data collection process take from start to finish?
+\item What does the data collection entail? 
+\item What steps will be take to keep the data collected confidential at this stage?
+\end{itemize}
+
+\subsubsection{Data Processing}
+
+\begin{itemize}
+\item How long will data processing take from start to finish?
+\item What does the data processing entail? 
+\item What steps will be take to keep the processed data confidential?
+\item Who has ownership over the processed data?
+\item How will the data be used/stored after the study at this stage?
+\end{itemize}
+
+\section{Empirical Analysis}
+
+\subsection{Variables}
+
+\begin{itemize}
+\item What are the main variables of interest in your study?
+\begin{itemize}
+\item How is each of them defined in your dataset?
+\end{itemize}
+\end{itemize}
+
+\subsection{Balancing Checks}
+
+\begin{itemize}
+\item How will you check balance between treatment and control groups? 
+\begin{itemize}
+\item What is the specification that you will run?
+\item What variables will you include in these balancing checks?
+\end{itemize}
+\item How will you check balance between attritors and non-attritors? 
+\begin{itemize}
+\item What is the specification that you will run?
+\item What variables will you include in these balancing checks?
+\end{itemize}
+\end{itemize}
+
+\subsection{Treatment Effects}
+
+\subsubsection{Intent to Treat}
+
+\begin{itemize}
+\item How will you estimate the (causal) effect of the offer of the treatment? 
+\begin{itemize}
+\item What is the specification that you will run?
+\item What controls will you include in your specification?
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Treatment on the Treated}
+
+\begin{itemize}
+\item How will you estimate the (causal) effect of the receipt of the treatment? 
+\begin{itemize}
+\item What is the specification that you will run?
+\item What controls will you include in your specification?
+\end{itemize}
+\end{itemize}
+
+\subsection{Heterogeneous Effects}
+
+\begin{itemize}
+\item Which groups do you anticipate will display heterogeneous effects?
+\item What is the broad theory of action that leads you to anticipate these effects? 
+\end{itemize}
+
+\subsubsection{Intent to Treat}
+
+\begin{itemize}
+\item How will you estimate the heterogeneous effects of the offer of the treatment? 
+\begin{itemize}
+\item What are the specifications that you will run?
+\item What controls will you include in your specification?
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Treatment on the Treated}
+
+\begin{itemize}
+\item How will you estimate the heterogeneous effects of the receipt of the treatment? 
+\begin{itemize}
+\item What are the specifications that you will run?
+\item What controls will you include in your specification?
+\end{itemize}
+\end{itemize}
+
+\subsection{Standard Error Adjustments}
+
+\begin{itemize}
+\item How will you account for clustering in your data?
+\item How will you address false positives from multiple hypothesis testing?
+\begin{itemize}
+\item If you plan to adjust your standard errors, what adjustment procedure will you use? (e.g., Family Wise Error Rate, False Discovery Rates, etc.)
+\item If you plan to aggregate multiple variables into an index, which variables will you aggregate and how?
+\item How will you deal with outcomes with limited variation?
+\end{itemize}
+\end{itemize}
+
+\section{Research Team}
+
+\begin{itemize}
+\item Who are the principal investigators of this study?
+\begin{itemize}
+\item What will each of these investigators do?
+\end{itemize}
+\item Will there be any research assistants in this study?
+\begin{itemize}
+\item If so, what will these research assistants do? 
+\end{itemize}
+\end{itemize}
+
+\section{Deliverables}
+
+\begin{itemize}
+\item What are the main products that will result from this study?
+\item Who will be the lead author(s) for each of these deliverables?
+\end{itemize}
+
+\section{Calendar}
+
+\begin{itemize}
+\item How long will the entire study take from start to finish?
+\item What are the different tasks/steps to be completed each week/month?
+\end{itemize}
+
+\section{Budget}
+
+\begin{itemize}
+\item What will each part of this study cost?
+\item What sources of funding do you anticipate?
+\end{itemize}
+
+\singlespacing
+
+\bibliographystyle{chicago}
+\bibliography{/users/alejandroganimian/dropbox/work/projects/cimientos_study/bibliography/bibliography_cimientos}
+
+\end{document}
+
+
+
+  
