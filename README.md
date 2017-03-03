@@ -1,8 +1,8 @@
-# World Bank Reproducibility Training
+# BITSS New Delhi Reproducibility Training
 by [Garret Christensen](http://www.ocf.berkeley.edu/~garret)
 
 UC Berkeley ([Berkeley Initative for Transparency in the Social Sciences](http://www.bitss.org), [Berkeley Institute for Data Science](http://bids.berkeley.edu))
-### Materials for the February 2017 Reproducibility Training at the World Bank
+### Materials for the February 2017 Reproducibility Training , New Delhi India
 
 The numbered files/directories will take you through the workshop in order.
 
