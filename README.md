@@ -35,7 +35,8 @@ Writing good code is facilitated by a good text editor. You can get away without
 
 # Workshop Agenda
 
-Date | March 16|
+## March 16
+
 Time | Session | Speaker
 ------------ | ------------- | -------------
 9:00 | Welcome and introductions | 
@@ -47,8 +48,9 @@ Time | Session | Speaker
 2:30 | Data De-Identification & Sharing |
 3:45 | TEA BREAK | 
 4:00 | Replication & Data Sharing Activity | Julia Clark
------------- | ------------- | -------------
-Date | March 17|
+
+## March 17
+
 Time | Session | Speaker
 ------------ | ------------- | -------------
 9:00 | Version Control with Git + Github I | Garret Christensen
