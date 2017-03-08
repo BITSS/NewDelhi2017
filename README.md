@@ -1,7 +1,10 @@
 # BITSS New Delhi Reproducibility Training
-by [Garret Christensen](http://www.ocf.berkeley.edu/~garret)
+by [Garret Christensen](http://www.ocf.berkeley.edu/~garret)[1] and Julia Clark[2]
 
-UC Berkeley ([Berkeley Initative for Transparency in the Social Sciences](http://www.bitss.org), [Berkeley Institute for Data Science](http://bids.berkeley.edu))
+[1] UC Berkeley ([Berkeley Initative for Transparency in the Social Sciences](http://www.bitss.org), [Berkeley Institute for Data Science](http://bids.berkeley.edu))
+
+[2] UC San Diego
+
 ### Materials for the February 2017 Reproducibility Training , New Delhi India
 
 The numbered files/directories will take you through the workshop in order.
@@ -30,19 +33,32 @@ Note that Github Desktop works on Mac and Windows. If you're a Linux user, you m
 
 Writing good code is facilitated by a good text editor. You can get away without one because you almost certainly already have a program on your computer that can save simple ASCII text files (Notepad for Windows, or TextEdit for Mac--but change the default from Rich Text to Plain Text) but modern text editors do syntax highlighting, auto-complete, and a bunch of other cool stuff for you. I suggest [Atom](http://atom.io). You can extend its functionality by going to settings and adding packages (one to render Markdown as PDF might be especially helpful.)
 
-Workshop Agenda
+# Workshop Agenda
 -------------
+
+## March 16
 
 Time | Session | Speaker
 ------------ | ------------- | -------------
-9:30-9:45 | Welcome and introductions | 
-9:45-10:15 |Overview of transparency and reproducibility in social science research | Garret Christensen (BITSS)
-10:15-10:45 | Motivational talks - why version control? | Jamie Jones (GitHub Government Team); Tariq Khokhar (World Bank Global Data Editor)
-10:45-11 | COFFEE BREAK |
-11-12:15 | Version control part 1 | Garret Christensen
-12:15-1:15pm | LUNCH BREAK |
-1:15-2:45 | Version control part 2; including group work (hands-on session) | Garret Christensen
-2:45-3 | COFFEE BREAK |
-3-3:30 | How to get started with World Bank GitHub account | Andrew Whitby + Kiwako Sakamoto
-3:30-4:30 | GitHub for TTLs - How to use GitHub as a collaboration and project monitoring tool | Andrew Whitby + Kiwako Sakamoto
-4:30-5 | Closing discussion | 
+9:00 | Welcome and introductions | 
+9:30 |Overview of transparency and reproducibility in social science research | Garret Christensen 
+10:45 |  TEA BREAK |
+11:00 | Registration and Pre-Analysis Plans, AEA Registry and the OSF | Garret Christensen
+12:00| LUNCH BREAK |
+1:00 | Coding Reproducibly: Lessons Learned | Julia Clark & Garret Christensen
+2:30 | Data De-Identification & Sharing |
+3:45 | TEA BREAK | 
+4:00 | Replication & Data Sharing Activity | Julia Clark
+
+## March 17
+
+Time | Session | Speaker
+------------ | ------------- | -------------
+9:00 | Version Control with Git + Github I | Garret Christensen
+10:30 |  TEA BREAK |
+10:45 |Version Control with Git + Github II | Garret Christensen 
+12:30| LUNCH BREAK |
+1:30 | Dynamic Documents using Stata| Garret Christensen
+3:00 | TEA BREAK | 
+3:30 | Dynamic Documents using R | Julia Clark
+
