@@ -5,10 +5,10 @@ by [Garret Christensen](http://www.ocf.berkeley.edu/~garret)[1] and Julia Clark[
 
 [2] UC San Diego
 
-### Materials for the February 2017 Reproducibility Training , New Delhi India
+## Materials for the February 2017 Reproducibility Training , New Delhi India
 
-## Installation Instructions
-The workshop will introduce you to tools that can help you make your workflow more reproducible. You are required to install [the following software programs](http://www.bitss.org/2016/01/08/open-source-software-for-reproducible-social-science/)  before coming to the workshop for the hands-on exercises. (This takes a while, so please don't leave it to the last minute. It's OK if you run into difficulties; we'll be happy to help.
+### Installation Instructions
+The workshop will introduce you to tools that can help you make your workflow more reproducible. You are required to install [the following software programs](http://www.bitss.org/2016/01/08/open-source-software-for-reproducible-social-science/)  before coming to the workshop for the hands-on exercises. (This takes a while, so please don't leave it to the last minute! It's OK if you run into difficulties; we'll be happy to help.)
 
 
 The numbered files/directories will take you through the workshop in order.
