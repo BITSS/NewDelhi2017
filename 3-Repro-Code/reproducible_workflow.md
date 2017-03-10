@@ -1,17 +1,15 @@
----
-layout: page
-root: ../..
-title: Reproducible Workflows
----
 
-Reproducible Workflows
+
+Reproducible Coding [1]
 ======================
 
-We're now in the home stretch of the workshop --- congratulations! Up
+[1] Thanks to [Justin Kitzes and Lauren Ponisio](https://bids.github.io/2017-01-12-ucb/) for these materials.
+
+<!--We're now in the home stretch of the workshop --- congratulations! Up
 to this point, we've talked about how to make your code efficient
 (good programming practices), accurate (testing), and maintainable
 (modularization + version control). Now we're going to talk about a
-final and very important concept known as reproducibility.
+final and very important concept known as reproducibility.-->
 
 For our purposes, we can summarize the goal of reproducibility in two
 ways, one of which is a hard requirement and the other of which is an
@@ -91,15 +89,16 @@ Now, within the `raptor_inflam` directory, create four subdirectories (for bonus
 
     .
     |-- data
-    |-- man
-    |-- results
-    |-- src
+    |-- rawdata
+    |-- paper
+    |-- output
+    |-- do
 
 The `data` directory will hold all of the raw data associated with the
 project, which in this case will be just a single large csv file
 containing data on the inflammation data.
 
-The `man` folder, short for manuscript, will (someday) contain the
+The `paper` folder will (someday) contain the
 manuscript that we'll write describing the results of our
 analysis. You can consider this directory optional, as there are good
 arguments both for and against the practical value of putting your
@@ -110,9 +109,9 @@ write your manuscripts in a plain text format like LaTeX or Markdown
 able to use version control to diff and merge your manuscript drafts,
 which can be useful.
 
-Finally, the `results` folder will contain the results of our
-analysis, including both tables and figures, and the `src` directory
-will contain all of our code used to perform the analysis.
+Finally, the `output` folder will contain the results of our
+analysis, including both tables and figures, and the `do` directory
+will contain all of our code used to perform the analysis. (If you can't tell, we were raised on Stata.)
 
 In a more complex project, each of these directories may have
 additional subdirectories to help keep things organized.
@@ -123,7 +122,7 @@ additional subdirectories to help keep things organized.
 Since we want to use version control to track the development of our
 project, we'll start off right away by initializing an empty Git
 repository within this directory. To do this, open a terminal window,
-navigate to the main `raptor_inflam` directory, and run the command
+navigate to the main directory, and run the command
 `git init`.
 
 As you add things to the project directory, and modify old things,
@@ -134,10 +133,7 @@ Git tutorial.
 ----------------
 
 Often, we start a project with a particular data file, or set of data
-files. In this case, we have the file `inflammation-01.csv`, which
-contains the records that we want to analyze. If you don't have it
-already, download this file [here](data/inflammation-01.csv) and
-place it in the `data` subdirectory.
+files. 
 
 Now we reach an interesting question --- should the files in your
 `data` directory be placed under version control (i.e., should you
@@ -150,7 +146,7 @@ necessarily useful to place this file under version control for the
 purpose of tracking changes to it.
 
 A reasonable rule of thumb for getting started is that if the file is
-realatively small (ours is < 100k), go ahead and commit it to the tit
+realatively small (ours is < 100k), go ahead and commit it to the
 repository, as you won't be wasting much hard disk
 space. Additionally, the file will then travel with your code, so if
 you push your repository to GitHub (for example) and one of your
