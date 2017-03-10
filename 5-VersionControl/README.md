@@ -9,7 +9,7 @@ affiliation: UC Berkeley
 
 Git & GitHub Desktop Workshop
 ==============================
-BITSS World Bank, February 2017
+BITSS New Delhi 2017
 ------------------------------
 by Garret Christensen
 
