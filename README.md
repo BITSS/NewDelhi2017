@@ -10,7 +10,7 @@ by [Garret Christensen](http://www.ocf.berkeley.edu/~garret)[1] and Julia Clark[
 ### Installation Instructions
 The workshop will introduce you to tools that can help you make your workflow more reproducible. You are required to install [the following software programs](http://www.bitss.org/2016/01/08/open-source-software-for-reproducible-social-science/)  before coming to the workshop for the hands-on exercises. (This takes a while, so please don't leave it to the last minute! It's OK if you run into difficulties; we'll be happy to help.)
 
-
+### Workshop Materials
 The numbered files/directories will take you through the workshop in order.
 
 1-Intro features a set of slides (Beamer/LaTeX slides rendered as PDF) that discuss the reproducibility crisis in the social sciences.
@@ -25,14 +25,15 @@ The numbered files/directories will take you through the workshop in order.
 
 6-[fill in the blank] contains example files to run dynamic documents in both Stata and R.
 
------------
+#### Additional Materials:
+X-Frontier is a set of slides on new opportunities (grants, workshops, etc.) in transparency.
+
+X-Tools-Intro is a set of slides covering the software tools we'll discuss.
 
 
+## Workshop Agenda
 
-
-# Workshop Agenda
-
-## March 16
+### March 16
 
 Time | Session | Speaker
 ------------ | ------------- | -------------
@@ -46,7 +47,7 @@ Time | Session | Speaker
 3:45 | TEA BREAK |
 4:00 | Replication & Data Sharing Activity | Julia Clark
 
-## March 17
+### March 17
 
 Time | Session | Speaker
 ------------ | ------------- | -------------
