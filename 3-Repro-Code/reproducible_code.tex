@@ -8,7 +8,7 @@
 %%%%% BEAMER OPTIONS 
 
 \usetheme{default}
-\setbeameroption{hide notes} % change to show notes
+\setbeameroption{hide notes} % change to show to show notes
 \setbeamertemplate{note page}[plain]
 \addtobeamertemplate{note page}{\setlength{\parskip}{12pt}} % adds spaces to notes page
 
@@ -30,7 +30,7 @@
 
 \addtobeamertemplate{frametitle}{\vspace*{.6cm}}{\vspace*{0.2cm}} % slide title spacing
 
-% \beamerdefaultoverlayspecification{<+->} % uncovers everything in a step-wise fashion
+\beamerdefaultoverlayspecification{<+->} % uncovers everything in a step-wise fashion
 
 
 %%%%% SECTION TITLE SLIDES
@@ -58,18 +58,22 @@
 \definecolor{vhilight}{RGB}{255,111,207}
 \definecolor{medblue}{rgb}{.1,.35,1}
 \definecolor{medgreen}{RGB}{22, 158, 58}
+\definecolor{burntorange}{rgb}{0.8, 0.33, 0.0}
+\definecolor{ceruleanblue}{rgb}{0.16, 0.32, 0.75}
 \definecolor{darkblue}{RGB}{0,0,120}
 \definecolor{gray}{RGB}{155,155,155}
 \definecolor{lightgrey}{rgb}{.95,.95,.95}
 
-\setbeamercolor{titlelike}{fg=medblue}
-\setbeamercolor{subtitle}{fg=medblue}
+\setbeamercolor{titlelike}{fg=ceruleanblue}
+\setbeamercolor{subtitle}{fg=burntorange}
 \setbeamercolor{framesubtitle}{fg=darkblue}
 \setbeamercolor{institute}{fg=gray}
 \setbeamercolor{normal text}{fg=textcolor, bg=background} % sets main background and font color
-\setbeamercolor{item}{fg=medblue}
-\setbeamercolor{enumerate}{fg=medblue}
-
+\setbeamercolor{item}{fg=burntorange}
+\setbeamercolor{enumerate}{fg=burntorange}
+\hypersetup{colorlinks, linkcolor=, urlcolor=burntorange} 
+\let\oldtexttt\texttt% Store \texttt
+\renewcommand{\texttt}[2][ceruleanblue]{\textcolor{#1}{\ttfamily #2}}% \texttt[<color>]{<stuff>}
 
 %%%%% FONTS 
 \usepackage[english]{babel}
@@ -87,22 +91,21 @@
 \olditem\vspace{\fill}}
 \setlength{\tabcolsep}{0.5em} % horizontal padding for tables 
 
+
 %%%%% MACROS
 
 \newcommand{\bi}{\begin{itemize}}
 \newcommand{\ei}{\end{itemize}}
 \newcommand{\ig}{\includegraphics}
-\newcommand{\subt}[1]{{\footnotesize \color{magenta} {#1}}}
-\newcommand{\nb}[1]{{\color{magenta} {#1}}}
+\newcommand{\subt}[1]{{\footnotesize \color{burntorange} {#1}}}
+\newcommand{\nb}[1]{{\color{burntorange} {#1}}}
 
 %%%%% TITLE MATERIAL %%%%
 
-\title[Short Title]{Reproducible Code}
-\subtitle{Principles and Steps}
-\author[Clark]{Julia Clark \\ University of California, San Diego}
-\date[Short Occasion]{ BITSS Transparency and Reproducibility Workshop \\ \today}
-
-
+\title[Short Title]{Coding Reproducibility}
+\subtitle{Lessons Learned \vspace{-20pt} }
+\institute{\vspace{10pt} \includegraphics[width = 40mm]{images/pdel.png}\vspace{10pt} \includegraphics[width = 20mm]{images/UCSDlogo}}
+\date[Short Occasion]{Julia Clark \\ BITSS Transparency and Reproducibility Workshop \\ New Delhi \\ 16 March 2017}
 
 %%%%%%%%%%%%%%%%%%% BEGIN %%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -139,11 +142,17 @@
 
 %%%%%%%%%%%%%%%%% PDEL %%%%%%%%%%%%%%%%
 
-%\section{About PDEL}
-%\subsection{pdel}
-%	\begin{frame}{PDEL Data Transparency Project}
-%		ADD.
-%	\end{frame}
+\section{About PDEL}
+\subsection{pdel}
+	\begin{frame}{UCSD's Policy Design and Evaluation Lab (pdel.ucsd.edu)}
+		 Rigorous social science methodology \textcolor{ceruleanblue}{+} information technology \textcolor{ceruleanblue}{$\rightarrow$} policies and programs that alleviate poverty, promote health, welfare, and security, and enhance accountability.
+		 \pause
+		 \begin{itemize}
+		 	\item Interdisciplinary collaboration
+		 	\item Project and fund management support 
+		 	\item \textcolor{burntorange}{Data transparency services---helping researchers replicate studies and prepare files for public dissemination}
+		 \end{itemize}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%% WHAT IT IS %%%%%%%%%%%%%%%%%%%%%%%
 
@@ -155,7 +164,7 @@
 			\item Complete but parsimonious
 			\item Run and reproduce results with one click
 			\item Readable and interpretable by humans
-			\item Protects personal information
+			\item Protect personal information
 		\end{enumerate}
 	\end{frame}
 
@@ -176,6 +185,7 @@
 	
 	\textbf{Necessary:} All materials needed to generate and decipher results are included in the replication files, including \dots
 
+		\pause
 		\begin{itemize}		
 			\item Code---for analysis AND cleaning/merging data files
 			\item Data---raw and manipulated
@@ -184,7 +194,8 @@
 		
 		\bigskip
 		
-	\textbf{Sufficient:} Unnecessary files (e.g., old versions of figures, tables, data not used in analysis) should NOT be included---\textcolor{magenta}{AKA, don't just share your project directory as-is!}
+		\pause
+	\textbf{Sufficient:} Unnecessary files (e.g., old versions of figures, tables, data not used in analysis) should NOT be included---\textcolor{burntorange}{AKA, don't just share your project directory as-is!}
 			
 	\end{frame}
 
@@ -194,6 +205,7 @@
 	\begin{frame}{2. Runs \& Reproduces}
 		Code and data should \textbf{reproduce} the paper's results without error. 
 		
+		\pause
 		\begin{itemize}
 			\item This includes ALL tables, graphs, etc. in paper
 			\item Ideally code can be executed with a \textbf{single click}
@@ -209,6 +221,7 @@
 	\begin{frame}{3. Readable and interpretable (by humans!)}
 		Code should be streamlined and legible, with intuitively organized files. 
 		
+		\pause
 		\begin{itemize}		
 			\item Clearly labeled files within a logical folder structure
 			\item Separate code for data analysis/merging/cleaning, ideally with master script to run all
@@ -223,10 +236,11 @@
 \subsection{Protecting PII}
  
 	\begin{frame}{4. Protects PII}
-		 \textbf{Personally identifiable information (PII)}---e.g., phone numbers, email, addresses, and other info that could be used to identify a person---should not be included in a public dataset. 
-		 
+		 \textbf{Personally identifiable information (PII)} includes \textcolor{burntorange}{direct identifiers} (e.g., name, address, etc.) and \textcolor{burntorange}{indirect identifiers}---personal characteristics that, when combined, can identify a person.
+			 
+		\pause	 
 		\begin{itemize}		
-			\item This info should be censored/scrubbed from public data files, with original files stored securely
+			\item This info should be removed/altered in public data files, with original files stored securely
 			\item When possible, anonymize \textit{before} merging/cleaning so that data and code for these processes can be shared publicly
 		\end{itemize} 
 		\bigskip
