@@ -30,7 +30,7 @@
 
 \addtobeamertemplate{frametitle}{\vspace*{.6cm}}{\vspace*{0.2cm}} % slide title spacing
 
-\beamerdefaultoverlayspecification{<+->} % uncovers everything in a step-wise fashion
+% \beamerdefaultoverlayspecification{<+->} % uncovers everything in a step-wise fashion
 
 
 %%%%% SECTION TITLE SLIDES
@@ -130,12 +130,6 @@
 			\item About PDEL data transparency project
 			\item What makes code reproducible?
 			\item \textbf{Lessons Learned}:
-				\begin{itemize}
-					\item Complete 
-					\item Runs and reproduces
-					\item Readable 
-					\item Protects PII
-				\end{itemize}
 		\end{enumerate}
 	\end{frame}
 	}
@@ -146,7 +140,6 @@
 \subsection{pdel}
 	\begin{frame}{UCSD's Policy Design and Evaluation Lab (pdel.ucsd.edu)}
 		 Rigorous social science methodology \textcolor{ceruleanblue}{+} information technology \textcolor{ceruleanblue}{$\rightarrow$} policies and programs that alleviate poverty, promote health, welfare, and security, and enhance accountability.
-		 \pause
 		 \begin{itemize}
 		 	\item Interdisciplinary collaboration
 		 	\item Project and fund management support 
@@ -183,19 +176,18 @@
 \subsection{Complete}
 	\begin{frame}{1. Complete and Parsimonious}
 	
-	\textbf{Necessary:} All materials needed to generate and decipher results are included in the replication files, including \dots
+	\textbf{Complete:} All materials needed to generate and decipher results are included in the replication files \dots
 
-		\pause
 		\begin{itemize}		
-			\item Code---for analysis AND cleaning/merging data files
-			\item Data---raw and manipulated
-			\item Supplementary files (codebooks, readme files, etc.)
+			\item \textcolor{burntorange}{Code}---for analysis AND cleaning/merging data files
+			\item \textcolor{burntorange}{Data}---raw and manipulated
+			\item \textcolor{burntorange}{Supplementary files}---codebooks, readme files, etc.
 		\end{itemize} 
 		
 		\bigskip
 		
-		\pause
-	\textbf{Sufficient:} Unnecessary files (e.g., old versions of figures, tables, data not used in analysis) should NOT be included---\textcolor{burntorange}{AKA, don't just share your project directory as-is!}
+		
+	\textbf{Parsimonious:} Unnecessary files (e.g., old versions of figures, tables, data not used in analysis) should NOT be included---\textcolor{burntorange}{AKA, don't just share your project directory as-is!}
 			
 	\end{frame}
 
@@ -205,7 +197,7 @@
 	\begin{frame}{2. Runs \& Reproduces}
 		Code and data should \textbf{reproduce} the paper's results without error. 
 		
-		\pause
+		
 		\begin{itemize}
 			\item This includes ALL tables, graphs, etc. in paper
 			\item Ideally code can be executed with a \textbf{single click}
@@ -221,7 +213,7 @@
 	\begin{frame}{3. Readable and interpretable (by humans!)}
 		Code should be streamlined and legible, with intuitively organized files. 
 		
-		\pause
+		
 		\begin{itemize}		
 			\item Clearly labeled files within a logical folder structure
 			\item Separate code for data analysis/merging/cleaning, ideally with master script to run all
@@ -238,7 +230,7 @@
 	\begin{frame}{4. Protects PII}
 		 \textbf{Personally identifiable information (PII)} includes \textcolor{burntorange}{direct identifiers} (e.g., name, address, etc.) and \textcolor{burntorange}{indirect identifiers}---personal characteristics that, when combined, can identify a person.
 			 
-		\pause	 
+			 
 		\begin{itemize}		
 			\item This info should be removed/altered in public data files, with original files stored securely
 			\item When possible, anonymize \textit{before} merging/cleaning so that data and code for these processes can be shared publicly
@@ -247,7 +239,10 @@
 			
 	\end{frame}
  
-
+\begin{frame}{}
+	\bigskip
+	\centering \large Questions?
+\end{frame}
 
 
 
