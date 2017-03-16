@@ -29,7 +29,7 @@ DO FILE
 /*							PSEUDONYMIZE ID NUMBER					  				  												 */
 /*************************************************************************/
 
-* Set seed for randomization
+* Set seed for randomization - CENSOR THIS when sharing code if used to de-identify  
 	set seed 92103
 
 * Summarize data 
@@ -44,7 +44,7 @@ DO FILE
     gen random_id=_n
 
 * Drop non-ID columns
-	drop village female age random
+	keep personal_id random_id
 	
 * Save the map of pseudo_IDs to personal IDs
     save "id_map.dta", replace

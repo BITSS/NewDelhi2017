@@ -12,7 +12,7 @@
 
 ######## PACKAGES ########
 
-# Check system and installs packages user doesn't have, load needed packages
+# Check system and install packages user doesn't have, load needed packages
 
   need <- c("dplyr") # list packages needed
   have <- need %in% rownames(installed.packages()) # checks packages you have
@@ -68,8 +68,8 @@
   id_map <- select(survey, personal_ID, pseudo_ID) # save only the two ID columns
   write.csv(id_map, "id_map.csv", row.names=F)
 
-# Drop original ID number from the dataset  
-  pseudo_survey <- select(survey, -personal_ID) # keep everything except personal_ID
+# Drop personal ID number from the dataset  
+  pseudo_survey <- select(survey, -personal_ID) 
   pseudo_survey <- pseudo_survey[c(4,1,2,3)] # reorder so ID is first
  
 # Save new public file
@@ -104,6 +104,5 @@
     group_by(village, age_range) %>% 
     summarise(count_female = sum(female)) # count number of women by village, age
   print(binned_age_table, n=30) # print first 30 rows of table
-  
   table(binned_age_table$count_female) # Better! But we're loosing lots of information  
   
