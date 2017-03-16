@@ -1,11 +1,12 @@
+<!--YAML HEADER
 ---
 title : Introduction to git using GitHub Desktop
-part of : BITSS World Bank Feb 2017 Workshop
+part of : BITSS New Delhi March 2017 Workshop
 time : 3 hours
 author: Garret Christensen
 affiliation: UC Berkeley
 ---
-
+-->
 
 Git & GitHub Desktop Workshop
 ==============================
@@ -90,7 +91,7 @@ If you do see the hidden files, *never ever ever* mess with them.
 
 Now that you've succsefully cloned a repository, we'll create our own.
 
-* Create a new repository. Give it a name like `codepoetry_<yourfavoriteanimal>` *What files are in it?*
+* Create a new repository. Give it a name like `codepoetry_<yourname>` *What files are in it?*
 * Create a text file called `README.md` using your text editor. Give the file three lines of text:
 
 >Turning and turning in the widening gyre
@@ -99,7 +100,7 @@ Now that you've succsefully cloned a repository, we'll create our own.
 
 > Things fall apart; the centre cannot hold;
 
-* Save the file in `codepoetry`
+* Save the file in `codepoetry_<yourname>`
 
 What's different about Github Desktop?
 
