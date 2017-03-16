@@ -1,0 +1,535 @@
+\documentclass[12pt, compress]{beamer} % ,t or ,b for top or bottom-aligned, compress for h-dots
+\usepackage{graphicx}
+\usepackage[absolute,overlay]{textpos} % to get full size picture
+\usepackage{tikz}
+\usepackage{csquotes}
+\usepackage{hyperref}
+
+%%%%% BEAMER OPTIONS 
+
+\usetheme{default}
+\setbeameroption{hide notes} % change to show to show notes
+\setbeamertemplate{note page}[plain]
+\addtobeamertemplate{note page}{\setlength{\parskip}{12pt}} % adds spaces to notes page
+
+\setbeamertemplate{frametitle}[default][center] % centering titles
+\setbeamertemplate{footline} % footnote with sections
+{
+	\begin{beamercolorbox}[center]{section in head/foot}
+	\vskip12pt % distance from top 
+	\insertnavigation{\textwidth}
+	\vskip4pt % distance from bottom
+	\end{beamercolorbox}
+}
+
+% \setbeamertemplate{footline}{% add footnotes
+   % \raisebox{5pt}{\makebox[\paperwidth]{\hfill\makebox[20pt]{\color{gray}
+         % \scriptsize\insertframenumber}}}\hspace*{5pt}}
+
+\beamertemplatenavigationsymbolsempty % gets rid of navigation bar
+
+\addtobeamertemplate{frametitle}{\vspace*{.6cm}}{\vspace*{0.2cm}} % slide title spacing
+
+% \beamerdefaultoverlayspecification{<+->} % uncovers everything in a step-wise fashion
+
+
+%%%%% SECTION TITLE SLIDES
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[center]{title}
+  	\vskip14pt
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+%%%%% COLORS 
+
+\definecolor{textcolor}{RGB}{24,24,24} % sets main text color
+\definecolor{background}{RGB}{255,255,255} % sets background to white
+%\definecolor{background}{RGB}{24,24,24} % sets background to black
+%\definecolor{title}{RGB}{107,174,214}
+%\definecolor{subtitle}{RGB}{102,255,204}
+\definecolor{hilight}{RGB}{102,255,204}
+\definecolor{vhilight}{RGB}{255,111,207}
+\definecolor{medblue}{rgb}{.1,.35,1}
+\definecolor{medgreen}{RGB}{22, 158, 58}
+\definecolor{burntorange}{rgb}{0.8, 0.33, 0.0}
+\definecolor{ceruleanblue}{rgb}{0.16, 0.32, 0.75}
+\definecolor{darkblue}{RGB}{0,0,120}
+\definecolor{gray}{RGB}{155,155,155}
+\definecolor{lightgrey}{rgb}{.95,.95,.95}
+
+\setbeamercolor{titlelike}{fg=ceruleanblue}
+\setbeamercolor{subtitle}{fg=burntorange}
+\setbeamercolor{framesubtitle}{fg=darkblue}
+\setbeamercolor{institute}{fg=gray}
+\setbeamercolor{normal text}{fg=textcolor, bg=background} % sets main background and font color
+\setbeamercolor{item}{fg=burntorange}
+\setbeamercolor{enumerate}{fg=burntorange}
+\hypersetup{colorlinks, linkcolor=, urlcolor=burntorange} 
+\let\oldtexttt\texttt% Store \texttt
+\renewcommand{\texttt}[2][ceruleanblue]{\textcolor{#1}{\ttfamily #2}}% \texttt[<color>]{<stuff>}
+
+%%%%% FONTS 
+\usepackage[english]{babel}
+\usefonttheme{professionalfonts}
+\usefonttheme{serif}
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{Helvetica Light} % ligatures for em dash and quotation marks
+\setbeamerfont{note page}{family*=pplx,size=\footnotesize} % Palatino for notes
+\setbeamerfont{framesubtitle}{size=\small} 
+
+%%%%% SPACING
+
+\let\olditem\item % increase spacing between bullets
+\renewcommand{\item}{%
+\olditem\vspace{\fill}}
+\setlength{\tabcolsep}{0.5em} % horizontal padding for tables 
+
+
+%%%%% MACROS
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\ig}{\includegraphics}
+\newcommand{\subt}[1]{{\footnotesize \color{burntorange} {#1}}}
+\newcommand{\nb}[1]{{\color{burntorange} {#1}}}
+
+%%%%% TITLE MATERIAL %%%%
+
+\title[Short Title]{Prepping Files for Sharing}
+\subtitle{Validation, Cleaning, and De-Identifying Data \vspace{-20pt} }
+\institute{\vspace{10pt} \includegraphics[width = 40mm]{images/pdel.png}\vspace{10pt} \includegraphics[width = 20mm]{images/UCSDlogo}}
+\date[Short Occasion]{Julia Clark \\ BITSS Transparency and Reproducibility Workshop \\ New Delhi \\ 16 March 2017}
+
+
+%%%%%%%%%%%%%%%%%%%%%% BEGIN %%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%% TITLE PAGE
+
+{\setbeamertemplate{footline}{} % no navigation
+\frame{
+  \titlepage
+  \note{}
+  }
+}
+
+%%%%%%%%%%%%%%%%%%%% OVERVIEW %%%%%%%%%%%%%%%%%%%%%%%
+
+	{\setbeamertemplate{footline}{} % no navigation
+	
+	\begin{frame}{Overview}
+		
+		\begin{itemize}
+			\item Motivation
+			\item \textbf{5 Steps to Prepping Files for Sharing:}
+			\begin{enumerate}
+				\item Set-up
+				\item Initial replication
+				\item De-identify
+				\item Edit
+				\item Final replication
+			\end{enumerate}
+		\end{itemize}
+		
+	\end{frame}
+	}
+
+%%%%%%%%%%%%%%%%%%%% INTRODUCTION %%%%%%%%%%%%%%%%%%
+\section{Motivation}
+
+\subsection{Intro}
+
+	\begin{frame}{Congratulations!}
+		\centering
+		You've completed a study.
+		\bigskip
+		\bigskip
+		
+		
+		\dots	 but now, you have to share your data and code for replication, sending these files to colleagues, to a journal, or posting in an online repository.
+	\end{frame}
+
+	\begin{frame}{Ideally}
+		\centering
+		You've been using GitHub, and maintaining your files and code with replication in mind, and so they are already \textcolor{burntorange}{(1) complete, (2) replicate, (3) legible,} and \textcolor{burntorange}{(4) protect PII}.
+	\end{frame}
+	
+	\begin{frame}
+		\centering And maybe they look something like this \dots 
+		\vspace{10pt}
+		\centering \includegraphics[width=\textwidth]{images/good_file_structure}
+	\end{frame}
+
+	\begin{frame}{Reality}
+		\centering
+		More often than not, however, our files look like this \dots
+		\vspace{10pt}
+		\begin{figure}[H]
+		  \includegraphics[width= .80\textwidth]{images/bad_file_structure}
+		\end{figure}
+	\end{frame}	
+
+	\begin{frame}{Goal}
+		Use this process a few times on old projects (or other people's datasets), then structure any new projects with these principles in mind from the beginning, making the back-end process much easier.
+	\end{frame}
+
+\subsection{PDEL}
+
+	\begin{frame}{PDEL Process}
+		See our \href{https://github.com/PolicyDesignEvaluationLab/Transparency-Initiative/wiki/PDEL-Data-Transparency-Services-Workflow}{GitHub wiki} for a summary of these steps:
+		
+		\begin{enumerate}
+			\item Set-up
+			\item Initial replication
+			\item De-identify
+			\item Edit
+			\item Final replication
+		\end{enumerate}
+	\bigskip
+				
+	\end{frame}	
+
+	\begin{frame}{Caveat}
+		There is, of course, no \textit{single, perfect} way to organize or prepare files for replication. We find this process to be relatively efficient, but do what works for you (and keeps those files complete, replicable, legible, and protecting PII)!
+	
+		\bigskip
+		
+		\textbf{Note:} This process assumes you haven't been using GitHub or other version control software; if you do, some of these steps will become obsolete (yay!).
+	\end{frame}
+%%%%%%%%%%%%%%%%%%%% SET UP %%%%%%%%%%%%%%%%%%%%%%
+
+ \section{1. Set up}
+ 
+ 	\subsection{Intro}
+ 
+		 \begin{frame}{Start Fresh for Replication}
+		 	Create a \textit{new}, clearly organized folder structure for replication that you add to selectively. 
+		 	
+		 	\begin{itemize}
+		 		\item \textbf{Purpose:} 
+		 		\begin{itemize}
+		 			\item Ensure files are \textcolor{burntorange}{complete/parsimonious, legible}
+		 			\item Protect original files [if you're using GitHub, you don't have to worry about this!]
+		 		\end{itemize}
+		 	\end{itemize}
+		 	
+		 \end{frame}
+	 
+ 	\subsection{Steps}
+ 
+		 \begin{frame}{Create}
+		 	\begin{enumerate}
+		 		\item \textbf{A new, empty replication folder} within your project directory (e.g., ``\texttt{replication\_files}
+		 		") 
+		 		\item \textbf{Subfolders:}
+		 			\begin{itemize}
+		 				\item \texttt{/code} --- scripts
+		 				\item \texttt{/data\_clean} --- manipulated data
+		 				\item \texttt{/data\_raw} --- original data
+		 				\item \texttt{/output} --- generated tables, graphs, etc.
+		 				\item \texttt{/extra} --- misc. extras (e.g., code book)
+		 			\end{itemize}
+		 			\item \textbf{A ``README.txt" or ``README.md" file} to document contents, sources, software/system versions, other info necessary for replication/comprehension.
+		 	\end{enumerate}
+		 \end{frame}
+		
+		\begin{frame}{PDEL Template}
+			\begin{figure}[H]
+			  \includegraphics[width= \textwidth]{images/pdel_structure}
+			\end{figure}
+		\end{frame}
+		
+		\begin{frame}{Note}
+			If you're beginning a project, this is also a good way to start organizing your files! In that case, you might also want a folder called ``\texttt{/draft}" to keep your paper drafts. 
+			\bigskip
+			
+			See also \href{https://github.com/BITSS/NewDelhi2017/blob/master/3-Repro-Code/reproducible\_workflow.md}{``reproducible\_workflow.md"} in the training folder for more suggestions on setting up a one-click system for new projects.
+			
+		\end{frame}
+	
+%%%%%%%%%%%%%%%%%%%% INITIAL REPLICATION %%%%%%%%%%%%%%
+
+ \section{2. Initial Replication}
+ 
+	 \subsection{Intro}
+		 \begin{frame}{Populate and run replication files}
+		 	\textit{Copy} (don't move!) over data and code files into the replications folder and try to replicate your results.
+		 	
+		 	\bigskip
+		 	
+		 	\textbf{Purpose:}
+			 	\begin{itemize}
+			 		\item Make sure your code actually runs and \textcolor{burntorange}{reproduces} before you tinker with structure and formatting
+			 		\item Build up your replication folder with \textcolor{burntorange}{complete and parsimonious} data/code files
+			 	\end{itemize}
+		 \end{frame}
+
+	\subsection{Steps}
+		\begin{frame}{Step 1. Check Analysis}
+			Easier to start with final analysis and work backwards to data cleaning/merging. 
+			\begin{enumerate}
+				\item Copy original analysis script(s) into \texttt{replication\_files/code}
+				\item Copy cleaned dataset(s) used for analysis into \texttt{replication\_files/data\_clean}
+				\item Run code without changes (except for wd)
+				\item Fix any bugs in the code, address discrepancies with previous results
+			\end{enumerate}
+		\end{frame}
+		
+		\begin{frame}{Step 2. Check Data Clean/Merge}
+			\begin{enumerate}
+				\item If separate from analysis, copy original merge/cleaning script(s) into \texttt{replication\_files/code}
+				\item Copy original dataset(s) to \texttt{replication\_files/data}
+				\item Run merge/clean code without changes (except for wd)
+				\item Rerun the analysis code from above on the newly cleaned/merged data file
+				\item If you get different results than step \#1, there is a discrepancy with  merging/cleaning code---fix it!
+			\end{enumerate}
+		\end{frame}
+
+%%%%%%%%%%%%%%%%%%%% ANON %%%%%%%%%%%%%%%%%%%%%%
+
+ \section{3. De-Identification}
+
+\subsection{Intro}
+
+	\begin{frame}{De-Identifying Individual-Level Data}
+		Now you know the code works and replicates, congratulations! The next step is to ensure that any shared files \textit{do not contain} data that could be used to identify individuals. 
+		
+		\bigskip
+		
+		\textbf{Purpose:} 
+		\begin{itemize}
+			\item Ensure you are \textcolor{burntorange}{protecting individuals' identity and private information}---this is an ethical issue for researchers, and a potential safety issue for participants
+			\item Comply with legal, research board or funder requirements (e.g., HIPAA and IRB in the US) 
+		\end{itemize}
+		
+	\end{frame}
+
+	\begin{frame}{What does ``de-identifying" mean?}
+		\textbf{Two types of identifiers:}
+		
+		\begin{enumerate}
+			\item \textcolor{burntorange}{Direct:} Variables that is explicitly linked to the subject---\textit{e.g., name, email, address, Aadhaar number, phone number, etc.}
+			\item \textcolor{burntorange}{Indirect:} Variables that, in combination, could be used to identify individuals---\textit{e.g., gender, dates (birth, program admission, etc.), geographic location (village, GPS), unusual occupations or education, etc.}
+		\end{enumerate}
+		
+		\bigskip
+		
+		See \href{https://fpf.org/wp-content/uploads/2016/04/FPF_Visual-Guide-to-Practical-Data-DeID.pdf}{this useful infographic}.
+	\end{frame}
+
+	\begin{frame}{Example of Indirect Identifiers}	
+		\begin{itemize}
+			\item You survey teachers and collect information on \textit{gender}, \textit{classes taught}, and \textit{age}.
+			\item If there is only one \textit{female}, \textit{third-grade} teacher \textit{aged 40-49} at a particular school, she is not anonymous in your data
+		\end{itemize}
+	\end{frame}		
+
+\subsection{Steps}
+
+	\begin{frame}{Dealing with Direct Identifiers}
+		In general, direct identifiers---e.g., name, address, mobile number, ID number---should \textit{never} be made public. 
+		
+		\bigskip
+		
+		
+		\textbf{Options:}
+		\begin{itemize}
+			\item Remove variables from shared dataset
+			\item Pseudonymize data: replace identifiers with ``pseudonyms" that may be reversible or non-reversible---e.g., give people random names or ID numbers---goal is to be able to link datasets
+		\end{itemize}
+	\end{frame}	
+	
+	\begin{frame}{Solutions for Direct Identifiers}
+		 \centering \includegraphics[width=.9\textwidth]{images/de-identification_direct.png}
+	\end{frame}
+	
+	\begin{frame}{What is Sufficient De-Identification for Indirect Identifiers?}
+	
+		\begin{enumerate}
+			\item \textbf{Determine Risk} = Pr(de-identifying) $\times$ sensitivity of data
+			\item \textbf{Set k-anonymous level:} each record cannot be distinguished from at least $k-1$ other individuals who also appear in the data set
+			\item \textbf{Select appropriate method(s) of de-identification:} aggregating data, removing certain variables or observations, reducing information/detail, adding random noise or values 
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}{The Problem}
+		 \centering \includegraphics[width=.85\textwidth]{images/reidentification.png}
+		 
+		 \tiny{Source: El Emam et al. 2015. ``A Systematic Review of Re-Identification Attacks on Health Data." PLOS One. }
+	\end{frame}
+	
+	\begin{frame}{Example of K-anon where k=3}
+			 \centering \includegraphics[width=.6\textwidth]{images/k-3.png}
+	\end{frame}
+	
+	\begin{frame}{Solutions for Indirect Identifiers}
+		\centering \includegraphics[width=1.1\textwidth]{images/de-identification_indirect.png}
+	\end{frame}
+	
+	\begin{frame}{Trade-off: \textcolor{burntorange}{Usefulness} $\Longleftrightarrow$ \textcolor{burntorange}{Anonymity}}
+		
+		\begin{itemize}
+			\item \textbf{Aggregating}---lose ability to replicate any individual-level analysis
+			\item \textbf{Removing variables}---may not be able to replicate specific models
+			\item \textbf{Reducing information}---adds noise to models
+			\item \textbf{Remove observations}---adds bias if non-random
+			\item \textbf{Adding random noise/values}---adds noise
+		\end{itemize}	
+	
+	
+	\bigskip
+			See \href{http://www.ehealthinformation.ca/wp-content/uploads/2014/08/2010-Risk-based-de-identification-of-health-data.pdf}{here} and \href{http://www.ehealthinformation.ca/wp-content/uploads/2014/08/2009-Tools-for-De-Identification-of-Personal-Health.pdf}{here} for more discussion of appropriate thresholds, methods, and tools for de-identification.
+
+	\end{frame}
+	
+	\begin{frame}{Good Practices}
+			\begin{itemize}
+				\item Include code for de-identified data for transparency (as long as the code itself doesn't compromise anonymity) 
+					\begin{itemize}
+						\item e.g., censor code that sets the seed for a random draw to generate new ID numbers and could be used to re-identify individuals
+					\end{itemize}
+				\item If identifiers \textit{aren't} used for analysis, de-identify early in merging/cleaning process
+				\item Store original data with PII securely---if you're using Dropbox, see \href{https://github.com/PolicyDesignEvaluationLab/Transparency-Initiative/wiki/Tips:-Protocol-for-Sharing-Data-via-Dropbox}{PDEL GitHub wiki} for tips on sharing with RAs in a way that protects PII data
+			\end{itemize} 	
+	\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%% CLEAN %%%%%%%%%%%%%%%%%%%%%%
+
+ \section{4. Editing}
+ 
+ \subsection{Intro}
+ 
+ 	\begin{frame}{Edit and Organize Files for Clarity}
+ 	Now we have working files that are de-identified; the next step is to clean and annotate so the so they are organized and written in a logical, user-friendly way. 
+ 	
+ 	\bigskip
+ 	
+ 		\textbf{Purpose:}
+ 		\begin{itemize}
+ 			\item Ensure files are \textcolor{burntorange}{legible} in terms of structure and content
+ 		\end{itemize}
+ 	\end{frame}
+ 
+ \subsection{Steps}
+ 
+ 	\begin{frame}{Basic steps}
+ 		\begin{enumerate}
+ 			\item Structure and name files
+ 			\item Streamline and annotate code
+ 			\item Document file and folder contents
+ 		\end{enumerate}
+ 	\end{frame}
+ 
+ 	\begin{frame}{Step 1: Structure and Name Files}
+ 		
+ 		\begin{itemize}
+ 			\item	 Create separate scripts for merging/cleaning and data analysis, with a master-script for running it all
+ 			\item Give code and data files logical names where possible (and remember to change file paths in code where necessary!)
+ 			\begin{itemize}
+ 				\item e.g., Number folders/files sequentially in the order they should be run
+ 			\end{itemize}
+ 		\end{itemize}
+ 	\end{frame}
+ 
+	 \begin{frame}{Step 2: Streamline \& Annotate Code}
+	 	
+	 	\begin{itemize}
+	 		\item Use working directories (and R projects)
+	 		\item Move exploratory analysis to end of script---good for posterity, but shouldn't obscure main code
+	 		\item Add headers (see PDEL template)
+	 		\item Format scripts so they're easily readable---e.g., indent code, use ample line breaks and spaces, standardize comment syntax
+	 	\end{itemize}
+	 \end{frame}
+	 
+	 \begin{frame}{Step 2: Streamline \& Annotate Code (Cont.)}
+	 	\begin{itemize}
+	 		\item Add comments to improve reader understanding; remove unhelpful/embarrassing comments
+			\item Clearly label code sections, main analyses, outputs 
+			\item Give variables intuitive names like \texttt{edu\_percent} rather than \texttt{v76}
+			\item Give output objects intuitive names like ``table\_main\_results"
+			\item Label variables and values in Stata
+	 	\end{itemize}
+	 \end{frame}
+	 
+	 \begin{frame}{Working directory}  
+			\textbf{R}: \texttt{setwd("$\sim$/Documents/replication\_files")} \\
+		 	\textbf{Stata}: \texttt{capture cd "$\sim$/Documents/replication\_files"}
+		 	
+		 	\bigskip
+		 	
+			 \begin{itemize}
+			 	\item Saves you time, since you only have to change the path once if the files move AND your code will be shorter
+			 	\item Someone replicating your files also only needs to change the file path once
+			 	\item Particularly helpful if switching between Mac (``/") and Windows (``$\backslash$") file extensions
+			 \end{itemize}
+	 \end{frame}
+
+\begin{frame}{Step 3: Document File and Folder Content}
+	\begin{itemize}
+		\item Update the README file to describe contents of replication folders
+		\item If necessary, include codebook in ``\texttt{/extra}" folder
+		\item Track and document packages, software versions
+		\begin{itemize}
+			\item \textbf{R:} \texttt{sessionInfo()}
+			\item \textbf{Stata:} \texttt{version}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%% CLEAN %%%%%%%%%%%%%%%%%%%%%%
+
+ \section{5. Final Replication}
+
+\subsection{}
+
+\begin{frame}{One more time}
+	
+		Now that you have cleaned/reorganized script files \dots 
+		
+		\begin{itemize}
+			\item Shutdown or clear your Stata/R memory
+			\item Rerun the entire process---including data merging, cleaning and analysis---to make sure the editing process didn't break anything
+			\item Testing on a friend (or RA's) computer can also be a final check
+			\item Once discrepancies are addressed, the files are ready for sharing!
+		\end{itemize}
+	
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%% END %%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Activity}
+		\centering \includegraphics[width=\textwidth]{images/steps.png}
+\end{frame}
+
+\begin{frame}{References}
+	\begin{itemize}
+		\item \href{http://www.ehealthinformation.ca/wp-content/uploads/2014/08/2009-Tools-for-De-Identification-of-Personal-Health.pdf}{Tools for De-Identification}
+		\item \href{http://www.ehealthinformation.ca/wp-content/uploads/2014/08/2010-Risk-based-de-identification-of-health-data.pdf}{El Emam. 2010. Risk-based De-Identification of Health Data.}
+		\item \href{http://www.bitss.org/education/manual-of-best-practices/}{Christensen. 2016. Manual of Best Practices In Transparent Social Science.}
+		\item \href{http://www.brown.edu/Research/Shapiro/pdfs/CodeAndData.pdf}{Gentzkow \& Shapiro. 2014. Code and Data for the Social Sciences: A Practitioner’s Guide}
+		\item J. Scott Long. 2008. The Workflow of Data Analysis Using Stata.
+		\item Christopher Gandrud. 2013. Reproducible Research in R and R Studio.
+	\end{itemize} 
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
