@@ -124,3 +124,4 @@ Stata-specific Suggestions
     clutter up datasets and folders with temporary files and variables.
 
 
+- Use underscores to separate different words in a variable name instead of concatenating them together.
