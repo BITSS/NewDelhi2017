@@ -46,7 +46,7 @@
 			
 	/**/quietly summ price
 	
-	txt "Because you put it on the next command line to say the mean of Price variable is " %9.2f r(mean) " and SD is " %9.2f r(sd)
+	txt "The mean of Price variable is " %9.2f r(mean) " and SD is " %9.2f r(sd)
 
              /*** 
              Adding a graph or image in the report 
@@ -58,17 +58,17 @@
              In order to add a graph using Markdown, I export the graph in PNG format.
              You can explain the graph in the "brackets" and define the file path in parentheses
              
-             ![explain the graph](./graph.png)
+             ![explain the graph](./graph.png)[h]
 			 
 			 You can also export to a ton of different file types. (Thanks, pandoc!) So that's actually kind of cool.
              
 			 Let's try and add math at the bottom. $y_i=\alpha+\beta_1*X_i$
 			 ***/
 
-     qui log c
+     qui log close
 
     *markdoc example, replace export(html) install mathjax                        
-     *markdoc example, replace export(doc)
+     *markdoc example, replace export(docx)
      markdoc example, replace export(tex) texmaster
      *markdoc example, replace
      *markdoc example, replace export(epub)
