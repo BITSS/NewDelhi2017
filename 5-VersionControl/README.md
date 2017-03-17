@@ -14,7 +14,7 @@ BITSS New Delhi 2017
 ------------------------------
 by Garret Christensen
 
-Thanks to [Dillon Niederhut](https://github.com/deniederhut/BITSS2016) for some original materials.
+Thanks to [Dillon Niederhut](https://github.com/deniederhut/BITSS2016) and [Justin Kitzes](https://bids.github.io/2017-01-12-ucb/lessons/git/) for some original materials.
 
 Essentially, we are trying to avoid a situation like this one :
 
