@@ -89,7 +89,7 @@ To clone a public repository that doesn't belong to you, click the download butt
 * What files are in there? Do you see anything you don't understand? If not, try this: [[Mac](http://www.macworld.co.uk/how-to/mac-software/how-show-hidden-files-in-mac-os-x-finder-funter-macos-sierra-3520878/)][[Windows](https://support.microsoft.com/en-us/help/14201/windows-show-hidden-files)]
 If you do see the hidden files, *never ever ever* mess with them.
 
-Now that you've succsefully cloned a repository, we'll create our own.
+Now that you've successfully cloned a repository, we'll create our own.
 
 * Create a new repository. Give it a name like `codepoetry_<yourname>` *What files are in it?*
 * Create a text file called `README.md` using your text editor. Give the file three lines of text:
